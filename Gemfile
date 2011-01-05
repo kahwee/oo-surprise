@@ -1,21 +1,29 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
+gem 'mysql2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+#gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
+gem 'jquery-rails', '>= 0.2.6'
+gem "haml"
+gem "rdiscount" # For markdown in haml
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 # gem 'ruby-debug19'
+
+gem 'formtastic', '>= 1.1.0'
+gem 'acts_as_commentable'
+gem "friendly_id", "> 3.1"
 
 # Bundle the extra gems:
 # gem 'bj'
