@@ -1,7 +1,4 @@
 -	@page_title = "Add new server"
 - @header_button_left = { :name => "Back", :icon => "arrow-l", :url => servers_path }
 - @header_button_right = { :name => "Delete2", :icon => "delete", :url => "index.html" }
-<a href="index.html" data-icon="delete">Cancel</a>
-<%= render 'form' %>
-
-<%= link_to 'Back', servers_path %>
+= render 'form'

@@ -1,0 +1,17 @@
+= form_for @server do |f|
+
+  %div{ "data-role" => "fieldcontain" }
+    = f.label :name
+    = f.text_field :name
+
+  %div{ "data-role" => "fieldcontain" }
+    = f.label :server_type_id
+    = collection_select(:server, :server_type_id, ServerType.all, :id, :name)
+    /=f.select :server_type_id
+
+  %div{ "data-role" => "fieldcontain" }
+    = f.label :description
+    = f.text_area :description, :input_html => { :rows => 4 }
+
+  %div{ "data-role" => "fieldcontain" }
+    = f.submit

@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  
+
   def index
     @tasks = Task.all
     respond_to do |format|
@@ -9,6 +9,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    @server = Server.find(params[:server_id])
     @task = Task.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb

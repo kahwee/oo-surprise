@@ -46,7 +46,7 @@ class ServersController < ApplicationController
 
     respond_to do |format|
       if @server.save
-        format.html { redirect_to(@server, :notice => 'Server was successfully created.') }
+        format.html { redirect_to(servers_path, :notice => 'Server was successfully created.') }
         format.xml  { render :xml => @server, :status => :created, :location => @server }
       else
         format.html { render :action => "new" }
