@@ -1,5 +1,7 @@
-%ul{"data-role" => "listview", "role" => "listbox", "data-dividertheme" => "b"}
-  %li{"data-role" => "list-divider"} Overview
+- @page_title = "Servers"
+- @header_button_right = { :name => "New", :icon => "new", :url => new_server_path }
+%ul{"data-role" => "listview", "role" => "listbox", "data-dividertheme" => "#{h jqmobile_theme('data-divider')}", "data-theme" => "#{h jqmobile_theme('data')}"}
+  %li{"data-role" => "list-divider"} All servers
   - @servers.each do |server|
     %li{"role" => "option"}= link_to server.name, server
 

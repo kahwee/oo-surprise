@@ -3,12 +3,9 @@
 %p#notice
   - notice
 
-%h1= @server.name
-
 %p= @server.description
-
 - @categories.each do |category|
-  %ul{"data-role" => "listview", "data-inset" => "true", "data-theme" => "d", "data-counttheme" => "e", "data-dividertheme" => "b"}
+  %ul{"data-role" => "listview", "data-inset" => "true", "data-theme" => "#{h jqmobile_theme('data')}", "data-counttheme" => "#{h jqmobile_theme('data-count')}", "data-dividertheme" => "#{h jqmobile_theme('data-divider')}"}
     %li{"data-role" => "list-divider"}= category.name
     - category.tasks.each do |task|
       %li{"data-role" => "option"}= link_to task.name, servers_path
