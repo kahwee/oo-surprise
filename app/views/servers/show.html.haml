@@ -1,0 +1,17 @@
+- @page_title = @server.name
+
+%p#notice
+  - notice
+
+%h1= @server.name
+
+%p= @server.description
+
+%ul{"data-role" => "listview", "data-inset" => "true", "data-dividertheme" => "b"}
+- @categories.each do |category|
+  %li{"data-role" => "list-divider"}= category.name
+  - category.tasks.each do |task|
+    %li{"data-role" => "option"}= link_to task.name, servers_path
+
+%p= link_to 'Edit', edit_server_path(@server)
+%p= link_to 'Back', servers_path

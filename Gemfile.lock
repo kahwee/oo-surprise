@@ -40,10 +40,6 @@ GEM
       net-ssh-gateway (>= 1.0.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    formtastic (1.2.2)
-      actionpack (>= 2.3.7)
-      activesupport (>= 2.3.7)
-      i18n (>= 0.4.0)
     friendly_id (3.1.8)
       babosa (~> 0.2.0)
     haml (3.0.25)
@@ -98,7 +94,6 @@ PLATFORMS
 DEPENDENCIES
   acts_as_commentable
   capistrano
-  formtastic (>= 1.1.0)
   friendly_id (> 3.1)
   haml
   jquery-rails (>= 0.2.6)

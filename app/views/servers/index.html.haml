@@ -1,0 +1,6 @@
+%ul{"data-role" => "listview", "role" => "listbox", "data-dividertheme" => "b"}
+  %li{"data-role" => "list-divider"} Overview
+  - @servers.each do |server|
+    %li{"role" => "option"}= link_to server.name, server
+
+= link_to 'New Server', new_server_path

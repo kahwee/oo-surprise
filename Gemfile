@@ -11,7 +11,6 @@ gem 'mysql2'
 # Use unicorn as the web server
 # gem 'unicorn'
 
-# Deploy with Capistrano
 gem 'capistrano'
 gem 'jquery-rails', '>= 0.2.6'
 gem "haml"
@@ -21,7 +20,6 @@ gem "rdiscount" # For markdown in haml
 # gem 'ruby-debug'
 # gem 'ruby-debug19'
 
-gem 'formtastic', '>= 1.1.0'
 gem 'acts_as_commentable'
 gem "friendly_id", "> 3.1"
 
