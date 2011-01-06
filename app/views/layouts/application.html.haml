@@ -17,5 +17,7 @@
         %h1= @page_title or 'Experiment'
       - flash.each do |name, message|
         = content_tag :div, message, :id => "flash_#{name}"
-      #content{"data-role" => "content", "role" => "main"}
+      #content{"data-role" => "content"}
         = yield
+      #footer{"data-role" => "footer"}
+        %p
