@@ -4,3 +4,4 @@ log/*.log
 tmp/**/*
 nbproject
 .redcar
+config/ldap.yml
