@@ -1,4 +1,6 @@
 OoExperiment::Application.routes.draw do
+  devise_for :users
+
   resources :servers do
     resources :tasks
   end

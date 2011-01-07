@@ -31,13 +31,6 @@ class CreateServers < ActiveRecord::Migration
     end
     add_index :tasks, ["name", "category_id"], :name => "index_tasks_on_name_and_category_id", :unique => true
 
-    create_table :users do |t|
-      t.string :principal_name, :limit => 127, :null => false
-      t.string :display_name, :limit => 63
-      t.string :short_name, :limit => 15
-      t.timestamps
-    end
-    add_index :users, ["principal_name"], :name => "index_users_on_principal_name", :unique => true
   end
 
   def self.down
@@ -45,6 +38,5 @@ class CreateServers < ActiveRecord::Migration
     drop_table :server_types
     drop_table :categories
     drop_table :tasks
-    drop_table :users
   end
 end
