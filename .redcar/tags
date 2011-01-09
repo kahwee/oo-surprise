@@ -1,4 +1,4 @@
-1294357347
+1294547624
 A	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.mobile-1.0a3pre.min.js	function A(){a.mobile.pageLoading(true);d(i);q!==false&&t&&c.set(t,p!==true);g();C!=null&&C.remove();a.mobile.silentScroll(i.data("lastScroll"));s.data("page")._trigger("hide",null,{nextPage:i});if(i.data("page")._trigger("show",null,{prevPage:s})!==false)
 Application	/home/kahwee/projects/oo_experiment/config/application.rb	  class Application 
 ApplicationController	/home/kahwee/projects/oo_experiment/app/controllers/application_controller.rb	class ApplicationController 
@@ -6,6 +6,7 @@ ApplicationHelper	/home/kahwee/projects/oo_experiment/app/helpers/application_he
 BrowsingTest	/home/kahwee/projects/oo_experiment/test/performance/browsing_test.rb	class BrowsingTest 
 Category	/home/kahwee/projects/oo_experiment/app/models/category.rb	class Category 
 CreateServers	/home/kahwee/projects/oo_experiment/db/migrate/20110105163632_create_servers.rb	class CreateServers 
+DeviseCreateUsers	/home/kahwee/projects/oo_experiment/db/migrate/20110107032102_devise_create_users.rb	class DeviseCreateUsers 
 Oa	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.min.js	function Oa(a,b){b.src?c.ajax({url:b.src,async:false,dataType:"script"}):c.globalEval(b.text||b.textContent||b.innerHTML||"");b.parentNode&&b.parentNode.removeChild(b)}function oa(a,b,d){var e=b==="width"?a.offsetWidth:a.offsetHeight;if(d==="border")return e;c.each(b==="width"?Pa:Qa,function(){d||(e-=parseFloat(c.css(a,"padding"+this))||0);if(d==="margin")
 OoExperiment	/home/kahwee/projects/oo_experiment/config/application.rb	module OoExperiment
 S	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.min.js	function S(a,b){var d={};c.each(pa.concat.apply([],pa.slice(0,b)),function(){d[this]=a});return d}function qa(a){if(!ea[a])
@@ -43,6 +44,7 @@ dirCheck	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.js	functi
 dirNodeCheck	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.js	function dirNodeCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
 doScrollCheck	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.js	function doScrollCheck()
 down	/home/kahwee/projects/oo_experiment/db/migrate/20110105163632_create_servers.rb	  def self.down
+down	/home/kahwee/projects/oo_experiment/db/migrate/20110107032102_devise_create_users.rb	  def self.down
 e	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.min.js	function e(l){return f.step(l)
 edit	/home/kahwee/projects/oo_experiment/app/controllers/servers_controller.rb	  def edit
 edit	/home/kahwee/projects/oo_experiment/app/controllers/tasks_controller.rb	  def edit
@@ -84,6 +86,7 @@ test_homepage	/home/kahwee/projects/oo_experiment/test/performance/browsing_test
 trigger	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.js	function trigger( type, elem, args )
 u	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.mobile-1.0a3pre.min.js	function u(){if(k||i.data("role")=="dialog"){q=false;if(k){i.attr("data-role",k);k=null}}i.page()}var w=a.type(i)==="array",s=w?i[0]:a.mobile.activePage;i=w?i[1]:i;var t=fileUrl=a.type(i)==="string"?i.replace(/^#/,"")
 up	/home/kahwee/projects/oo_experiment/db/migrate/20110105163632_create_servers.rb	  def self.up
+up	/home/kahwee/projects/oo_experiment/db/migrate/20110107032102_devise_create_users.rb	  def self.up
 update	/home/kahwee/projects/oo_experiment/app/controllers/servers_controller.rb	  def update
 update	/home/kahwee/projects/oo_experiment/app/controllers/tasks_controller.rb	  def update
 winnow	/home/kahwee/projects/oo_experiment/public/javascripts/jquery.js	function winnow( elements, qualifier, keep )
