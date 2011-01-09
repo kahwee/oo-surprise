@@ -27,7 +27,6 @@ class ServersController < ApplicationController
   # GET /servers/new.xml
   def new
     @server = Server.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @server }
@@ -46,7 +45,7 @@ class ServersController < ApplicationController
 
     respond_to do |format|
       if @server.save
-        format.html { redirect_to(servers_path, :notice => 'Server was successfully created.') }
+        format.html { redirect_to(servers_path) }
         format.xml  { render :xml => @server, :status => :created, :location => @server }
       else
         format.html { render :action => "new" }
@@ -62,7 +61,7 @@ class ServersController < ApplicationController
 
     respond_to do |format|
       if @server.update_attributes(params[:server])
-        format.html { redirect_to(@server, :notice => 'Server was successfully updated.') }
+        format.html { redirect_to(@server) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

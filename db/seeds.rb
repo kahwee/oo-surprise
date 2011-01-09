@@ -27,11 +27,15 @@ category_c = Category.create!(
   :server_type_id => server_type_windows_xp.id
 )
 Task.create!([
-  { :name => 'Task 1', :category_id => category_a.id },
-  { :name => 'Task 2', :category_id => category_a.id },
-  { :name => 'Task 3', :category_id => category_a.id },
-  { :name => 'Task 4', :category_id => category_a.id },
-  { :name => 'Task 1', :category_id => category_b.id },
-  { :name => 'Task 1', :category_id => category_c.id },
-  { :name => 'Task 2', :category_id => category_c.id },
+  { :name => 'Check application log for warning and error messages for service startup errors, application or database errors and unauthorized application installs', :category_id => category_a.id },
+  { :name => 'Check security log for warning and error messages for invalid logons, unauthorized user creating, opening or deleting files', :category_id => category_a.id },
+  { :name => 'Check system log for warning and error messages for hardware and network failures', :category_id => category_a.id },
+  { :name => 'Check web/database/application logs for warning and error messages', :category_id => category_a.id },
+  { :name => 'Check directory services log on domain controllers', :category_id => category_a.id },
+  { :name => 'Check for memory usage', :category_id => category_a.id },
+  { :name => 'Check for system paging', :category_id => category_a.id },
+  { :name => 'Check CPU usage', :category_id => category_b.id },
+  { :name => 'Run dcdiag', :category_id => category_c.id },
+  { :name => 'Visually check the equipment for amber lights, alarms, etc.', :category_id => category_c.id },
+  { :name => 'Check all drives for adequate free space', :category_id => category_c.id },
 ])

@@ -17,10 +17,10 @@
     #container{"data-role" => "page", "data-theme" => "a", "role" => "main"}
       #header{"data-role" => "header"}
         - if @header_button_left.present?
-          = link_to @header_button_left[:name], @header_button_left[:url], { "data-icon" => @header_button_left[:icon] }
+          = link_to @header_button_left[:name], @header_button_left[:url], { "data-icon" => @header_button_left[:icon], "class" => "ui-btn-left" }
         %h1= @page_title or 'Experiment'
         - if @header_button_right.present?
-          = link_to @header_button_right[:name], @header_button_right[:url], { "data-icon" => @header_button_right[:icon] }
+          = link_to @header_button_right[:name], @header_button_right[:url], { "data-icon" => @header_button_right[:icon], "class" => "ui-btn-right" }
       - flash.each do |name, message|
         = content_tag :div, message, :id => "flash_#{name}"
       #content{"data-role" => "content"}

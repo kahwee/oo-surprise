@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(:version => 20110107032102) do
 
   add_index "categories", ["name", "server_type_id"], :name => "index_categories_on_name", :unique => true
 
+  create_table "server_task_statuses", :force => true do |t|
+    t.integer  "server_id",                 :null => false
+    t.integer  "task_id",                   :null => false
+    t.integer  "status_id",  :default => 0, :null => false
+    t.text     "remarks"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "server_types", :force => true do |t|
     t.string   "name",        :limit => 31,  :null => false
     t.string   "description", :limit => 511
@@ -42,14 +51,12 @@ ActiveRecord::Schema.define(:version => 20110107032102) do
   add_index "servers", ["name"], :name => "index_servers_on_name", :unique => true
 
   create_table "tasks", :force => true do |t|
-    t.string   "name",        :limit => 31,  :null => false
+    t.string   "name",        :limit => 511, :null => false
     t.string   "description", :limit => 511
     t.integer  "category_id",                :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "tasks", ["name", "category_id"], :name => "index_tasks_on_name_and_category_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

@@ -1,11 +1,12 @@
-- @page_title = "Takss for #{@server.name}"
+- @page_title = "Tasks for #{@server.name}"
+- @header_button_left = { :name => "All servers", :icon => "arrow-l", :url => servers_path }
+- @header_button_right = { :name => "Edit #{@server.name}", :icon => "gear", :url => edit_server_path(@server) }
 
 %p= @server.description
+
 - @categories.each do |category|
   %ul{"data-role" => "listview", "data-inset" => "true", "data-theme" => "#{h jqmobile_theme('data')}", "data-counttheme" => "#{h jqmobile_theme('data-count')}", "data-dividertheme" => "#{h jqmobile_theme('data-divider')}"}
     %li{"data-role" => "list-divider"}= category.name
     - category.tasks.each do |task|
-      %li{"data-role" => "option"}= link_to task.name, [@server, task]
-
-%p= link_to 'Edit', edit_server_path(@server)
-%p= link_to 'Back', servers_path
+      %li{"data-role" => "option"}= link_to task.name, server_task_server_task_statuses_path(@server, task)
+      /%li{"data-role" => "option"}= link_to task.name, new_server_task_server_task_status_path(@server, task)

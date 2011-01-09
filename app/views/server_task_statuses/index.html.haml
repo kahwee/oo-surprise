@@ -1,0 +1,26 @@
+- @page_title = "Statuses for #{@server.name} task"
+- @header_button_left = { :name => "Tasks for #{@server.name}", :icon => "arrow-l", :url => @server }
+- @header_button_right = { :name => "Add new status", :icon => "new", :url => new_server_task_server_task_status_path(@server, @task) }
+/= debug ActiveSupport::TimeZone.all.map(&:name)
+- tz = "Singapore"
+- current_date = Time.now.in_time_zone(tz).to_date
+- new_day = true
+%ul{"data-role" => "listview", "role" => "listbox", "data-inset" => "true", "data-dividertheme" => "#{h jqmobile_theme('data-divider')}", "data-theme" => "#{h jqmobile_theme('data')}"}
+  %li{"data-role" => "list-divider"}= current_date.strftime("%d %b %Y Today")
+  - if @server_task_statuses.present?
+    - @server_task_statuses.each do |server_task_status|
+      - if server_task_status.created_at.in_time_zone(tz).to_date != current_date
+        - date_diff = (current_date - server_task_status.created_at.in_time_zone(tz).to_date).to_i
+        - (1..date_diff).each do |i|
+          - current_date = current_date - 1
+          %li{"data-role" => "list-divider"}= current_date.strftime("%d %b %Y %A")
+        - new_day = true
+      - if new_day
+        - new_day = false
+      %li
+        %p.ui-li-aside= "sss"
+        %h3= server_task_status.created_at.in_time_zone(tz)
+        %p= server_task_status.remarks
+  - else
+    %li
+      %h3 No status updates in the past 7 days.

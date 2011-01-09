@@ -1,0 +1,11 @@
+= form_for [@server, @task, @server_task_status] do |f|
+
+  %div{ "data-role" => "fieldcontain" }
+    = f.label :status_id
+    = f.text_field :status_id
+
+  %div{ "data-role" => "fieldcontain" }
+    = f.label :remarks
+    = f.text_area :remarks, :input_html => { :rows => 4 }
+
+  = f.submit
