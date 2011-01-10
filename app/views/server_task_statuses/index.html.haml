@@ -5,7 +5,9 @@
 - tz = "Singapore"
 - current_date = Time.now.in_time_zone(tz).to_date
 - new_day = true
-%ul{"data-role" => "listview", "role" => "listbox", "data-inset" => "true", "data-dividertheme" => "#{h jqmobile_theme('data-divider')}", "data-theme" => "#{h jqmobile_theme('data')}"}
+- statuses = []
+- ServerTaskStatus::STATUSES.collect { |a , b| statuses[b] = a }
+%ul{"data-role" => "listview", "data-inset" => "true", "data-dividertheme" => "#{h jqmobile_theme('data-divider')}", "data-theme" => "#{h jqmobile_theme('data')}"}
   %li{"data-role" => "list-divider"}= current_date.strftime("%d %b %Y Today")
   - if @server_task_statuses.present?
     - @server_task_statuses.each do |server_task_status|
@@ -18,9 +20,11 @@
       - if new_day
         - new_day = false
       %li
-        %p.ui-li-aside= "sss"
+        %p.ui-li-aside 
+          %strong= statuses[server_task_status.status_id]
         %h3= server_task_status.created_at.in_time_zone(tz)
-        %p= server_task_status.remarks
+        :markdown
+          #{server_task_status.remarks}
   - else
     %li
       %h3 No status updates in the past 7 days.

@@ -2,7 +2,7 @@
 
   %div{ "data-role" => "fieldcontain" }
     = f.label :status_id
-    = f.text_field :status_id
+    = select(:server_task_status, :status_id, ServerTaskStatus::STATUSES)
 
   %div{ "data-role" => "fieldcontain" }
     = f.label :remarks
