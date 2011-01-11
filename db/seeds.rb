@@ -1,3 +1,8 @@
+User.create!(
+  :email => "t@kw.sg",
+  :password => "admin@123",
+  :password_confirmation => "admin@123"
+)
 server_type_windows_xp = ServerType.create!(
   :name => 'Windows XP'
 )

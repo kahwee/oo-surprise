@@ -1,6 +1,5 @@
 class ServersController < ApplicationController
-  # GET /servers
-  # GET /servers.xml
+
   def index
     @servers = Server.all
 

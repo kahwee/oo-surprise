@@ -1,6 +1,15 @@
 OoExperiment::Application.routes.draw do
-  devise_for :users
-
+  
+  devise_for :users, :path => "users", :path_names => { 
+    :sign_in => 'sign-in', 
+    :sign_out => 'sign-out', 
+    :password => 'pswd', 
+    :confirmation => 'verify', 
+    :unlock => 'unlock', 
+    :registration => 'register', 
+    :sign_up => 'sign-up' 
+  }
+  
   resources :servers do
     resources :tasks do
       resources :server_task_statuses

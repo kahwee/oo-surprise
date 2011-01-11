@@ -23,7 +23,6 @@ gem "rdiscount" # For markdown in haml
 gem 'acts_as_commentable'
 gem "friendly_id", "> 3.1"
 gem "devise"
-gem "devise_ldap_authenticatable"
 
 # Bundle the extra gems:
 # gem 'bj'

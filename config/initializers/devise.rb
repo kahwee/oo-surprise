@@ -3,13 +3,13 @@
 Devise.setup do |config|
   # ==> LDAP Configuration
   # https://github.com/cschiewek/devise_ldap_authenticatable
-  config.ldap_logger = false
-  config.ldap_create_user = false
-  config.ldap_update_password = false
-  config.ldap_config = "#{Rails.root}/config/ldap.yml"
-  config.ldap_check_group_membership = false #true soon
-  config.ldap_check_attributes = false
-  config.ldap_use_admin_to_bind = false
+  #config.ldap_logger = false
+  #config.ldap_create_user = false
+  #config.ldap_update_password = false
+  #config.ldap_config = "#{Rails.root}/config/ldap.yml"
+  #config.ldap_check_group_membership = false #true soon
+  #config.ldap_check_attributes = false
+  #config.ldap_use_admin_to_bind = false
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
@@ -30,19 +30,19 @@ Devise.setup do |config|
   # authenticating an user, both parameters are required. Remember that those
   # parameters are used only when authenticating and not when retrieving from
   # session. If you need permissions, you should implement that in a before filter.
-  # config.authentication_keys = [ :email ]
+  config.authentication_keys = [ :email ]
 
   # Tell if authentication through request.params is enabled. True by default.
-  # config.params_authenticatable = true
+  config.params_authenticatable = true
 
   # Tell if authentication through HTTP Basic Auth is enabled. True by default.
-  # config.http_authenticatable = true
+  config.http_authenticatable = false
 
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
-  # config.http_authenticatable_on_xhr = true
+  config.http_authenticatable_on_xhr = false
 
   # The realm used in Http Basic Authentication
-  # config.http_authentication_realm = "Application"
+  config.http_authentication_realm = "Lords"
 
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 10. If
@@ -117,7 +117,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = true
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes.

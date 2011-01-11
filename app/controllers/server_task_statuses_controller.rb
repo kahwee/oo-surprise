@@ -1,5 +1,5 @@
 class ServerTaskStatusesController < ApplicationController
-
+  
   def index
     @server = Server.find(params[:server_id])
     @task = Task.find(params[:task_id])
